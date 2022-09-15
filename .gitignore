@@ -104,3 +104,6 @@ ENV/
 .DS_Store
 
 .github/**
+
+# PyCharm
+.idea/
