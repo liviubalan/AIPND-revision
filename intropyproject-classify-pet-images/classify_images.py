@@ -67,7 +67,10 @@ def classify_images(images_dir, results_dic, model):
     """
     for img, result_value in results_dic.items():
         img_path = "{}/{}".format(images_dir, img)
-        classifier_label = classifier(img_path, model)
+        classifier_label = classifier(img_path, model).lower().strip()
         match = int(result_value[0] in classifier_label)
-        result_value.append(classifier_label)
-        result_value.append(match)
+
+        result_value.extend([
+            classifier_label,
+            match,
+        ])

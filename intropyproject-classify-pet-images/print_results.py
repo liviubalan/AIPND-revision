@@ -81,7 +81,7 @@ def print_results(results_dic, results_stats_dic, model,
 
         for key, value in results_dic.items():
             if (value[3] == 1 and value[4] == 0) or (value[3] == 0 and value[4] == 1):
-                print("{} misclassified dog using {}".format(key, model))
+                print("'{}' label for '{}' image misclassified dog using '{}'.".format(value[1], key, model))
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds
     # were incorrectly classified - print out these cases
