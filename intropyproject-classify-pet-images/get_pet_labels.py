@@ -45,7 +45,7 @@ def get_pet_labels(image_dir):
     # function
     results_dic = {}
     for path in listdir(image_dir):
-        if path == '.':
+        if path.startswith('.'):
             continue
 
         label_re = re.search("^(.*)_(.*)\\.(.*)$", path)
