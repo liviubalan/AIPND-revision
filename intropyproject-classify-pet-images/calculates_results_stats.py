@@ -80,13 +80,13 @@ def calculates_results_stats(results_dic):
     for result_list in results_dic.values():
         if result_list[2] == 1:
             results_stats_dic['n_match'] += 1
-        if result_list[2] == result_list[3]:
+        if sum(result_list[2:]) == 3:
             results_stats_dic['n_correct_breed'] += 1
         if result_list[3] == 1:
             results_stats_dic['n_dogs_img'] += 1
-            if result_list[3] == result_list[4]:
+            if result_list[4] == 1:
                 results_stats_dic['n_correct_dogs'] += 1
-        elif result_list[3] == result_list[4] == 0:
+        elif result_list[4] == 0:
             results_stats_dic['n_correct_notdogs'] += 1
     results_stats_dic['n_images'] = len(results_dic)
     results_stats_dic['n_notdogs_img'] = (results_stats_dic['n_images'] -

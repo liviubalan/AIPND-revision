@@ -66,12 +66,12 @@ def print_results(results_dic, results_stats_dic, model,
           "***")
     print("{:20}: {:3d}".format('N Images', results_stats_dic['n_images']))
     print("{:20}: {:3d}".format('N Dog Images', results_stats_dic['n_dogs_img']))
-    print("{} Not-Dog Images".format(results_stats_dic['n_notdogs_img']))
+    print("{:20}: {:3d}".format('N Not-Dog Images', results_stats_dic['n_notdogs_img']))
 
     print(" ")
     for key, value in results_stats_dic.items():
         percent = '%' if key[0] == 'p' else ''
-        print("{}: {}{}".format(key, value, percent))
+        print("{}: {}{}".format(key, round(value, 2), percent))
 
     if (print_incorrect_dogs and
             ((results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'])
